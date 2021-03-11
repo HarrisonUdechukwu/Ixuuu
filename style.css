@@ -1,0 +1,245 @@
+:root {
+    --maincolor: rgb(8, 8, 8);
+    --bgcolor: white;
+    --font: Comfortaa-VariableFont_wght;
+    --font2: 'Balsamiq Sans', cursive;
+    --fontSize1: 15px;
+    --fontSize2: 15px;
+    --bordercolor: rgba(184, 177, 175, 0.191);
+    --textcolor: rgb(5, 5, 5);
+    --borderColor: rgba(184, 177, 175, 0.191);
+}
+[data-theme="dark"] {
+    --maincolor: rgb(246, 37, 0);
+    --bgcolor: black;
+    --bordercolor: rgba(255, 68, 0, 0.191);
+    --textcolor: rgb(246, 37, 0); 
+   --borderColor: rgba(255, 68, 0, 0.191);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background: var(--bgcolor);
+}
+.theme-switch-wrapper {
+    display: flex;
+    position: relative;
+    right: 70px;
+    top: 15px;
+  }
+  .theme-switch {
+    display: inline-block;
+    height: 30px;
+    position: relative;
+    width: 60px;
+    top: 12px;
+  }
+  
+  .theme-switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 22px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 22px;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--maincolor);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+.fixedNav {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    position: fixed;
+    backdrop-filter: blur(5px) saturate(100%);
+    z-index: 222;
+    top: 0;
+    border-bottom: 1px solid var(--borderColor);
+
+}
+.bx {
+    font-size: 26px;
+     color: var(--textcolor);
+}
+.bxl-linkedin-square {
+    transition: 1s ease-in-out;
+}
+.bxl-linkedin-square:hover {
+    color: var(--maincolor);
+    transform: scale(.8);   
+}
+.bxl-github {
+    transition: 1s ease-in-out;
+}
+.bxl-github:hover {
+    color:var(--maincolor);
+    transform: scale(.8);
+    
+}
+.rightbar {
+    position: absolute;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: -25px;
+    margin-right: 10px;
+}
+.fixedNav .logo {
+    font-size: 35px;
+    font-family: 'Ravi Prakash', cursive;
+    position: fixed;
+    left: 10px;
+    top: -15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--textcolor);
+}
+.fixedNav .logo:hover {
+    color: var(--maincolor);
+    animation: reSize 2s 1;
+}
+@keyframes reSize {
+    0% { transform: scale(1);}
+    50% {transform: scale(.8);}
+    100%{transform: scale(1);}
+}
+.bx-moon {
+    position: relative;
+    top: -5px;
+}
+.body {
+    position: relative;
+    top: 130px;
+    left: 65%;
+    width: 170%;
+    line-height: 1.9em;
+    display: flex;
+    flex-direction: column;
+}
+@font-face {
+    font-family: Comfortaa-VariableFont_wght;
+    src: url(static/Comfortaa-VariableFont_wght.ttf) format('truetype')
+}
+@font-face {
+    font-family: Comfortaa-Bold;
+    src: url(static/Comfortaa-Bold.ttf) format('truetype')
+}
+h1 {
+    font-family: var(--font);
+    color: var(--textcolor);
+}
+p.name {
+    font-family: var(--font);
+    font-size: var(--fontSize1);
+    color: var(--textcolor);
+}
+.bxs-moon {
+    transition: 2s ease-in-out;
+}
+.bxs-moon:hover {
+    transform: scale(.8);
+    color: var(--maincolor);
+}
+p.about {
+    font-family: var(--font);
+    font-size: var(--fontSize1);
+    color: var(--maincolor);
+}
+i.italize {
+    color: var(--maincolor);
+}
+.works {
+    color: var(--maincolor);
+    font-size: var(--fontSize2);
+    text-transform: uppercase;
+    font-family: var(--font2);
+    position: relative;
+    top: 50px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-top:1px solid var(--bordercolor);
+    border-bottom: 1px solid var(--bordercolor) ;
+}
+a.link1 {
+    text-decoration: none;
+    color: var(--maincolor);
+}
+.boxContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    position: relative;
+    top: 100px;
+}
+.box {
+    width: 100%;
+    height: 30vh;
+    border: 1px solid var(--bordercolor);
+    border-radius: 10px;
+    transition: 1s ease-in-out;
+}
+.box:hover {
+    border: 5px solid var(--bordercolor);
+    animation: transform 4s infinite;
+}
+@keyframes transform {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.05);}
+    100% {transform: scale(1);}
+}
+@media (max-width: 500px) {
+    .body {
+        position: relative;
+        left: 8%;
+        width: 85%;
+    }
+    .boxContainer {
+        grid-template-columns: repeat(1, 1fr);
+        position: relative;
+        left: 0%;
+    }
+    .box {
+    width: 100%;
+    height: 60vh;
+    }
+}
